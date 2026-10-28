@@ -1,10 +1,7 @@
-
+import JobsListingWrapper from "@/components/jobs/JobListingWrapper";
 
 function JobsPage() {
-  
-  return (
-    <div>sss</div>
-  );
+  return <JobsListingWrapper/>
 }
 
 export default JobsPage;
