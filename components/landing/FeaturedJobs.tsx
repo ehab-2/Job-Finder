@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { JobsData } from "@/data";
+import AdminPageHeader from "../common/AdminPageHeader";
+
+
 
 
 function FeaturedJobs() {
@@ -8,21 +11,9 @@ function FeaturedJobs() {
   return (
     <>
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="flex justify-between items-end mb-8">
-          <div>
-            <h2 className="text-4xl font-heading font-bold">
-              FEATURED POSITIONS
-            </h2>
-            <p className="font-mono text-sm text-muted-foreground mt-2">
-              HAND-PICKED BY OUR AI
-            </p>
-          </div>
-          <Link href="/jobs">
-            <Button variant="outline">VIEW ALL →</Button>
-          </Link>
-        </div>
+        <AdminPageHeader title={"FEATURED POSITIONS"} subtitle={"HAND-PICKED BY OUR AI"} actionButtonLink={"/jobs"} actionButtonVariant={"outline"} actionButtonText={"VIEW ALL →"}/>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-0">
           {featuredJobs.map((job, i) => (
             <Link
               href={`/jobs/${job.id}`}

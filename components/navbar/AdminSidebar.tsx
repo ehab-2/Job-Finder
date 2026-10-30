@@ -7,7 +7,6 @@ const adminLinks = [
   { to: "/dashboard", label: "OVERVIEW", icon: LayoutGrid },
   { to: "/dashboard/jobs", label: "JOB POSTS", icon: Briefcase },
   { to: "/dashboard/applications", label: "APPLICATIONS", icon: FileText },
-  { to: "/dashboard/users", label: "USERS", icon: Users },
 ];
 
 const AdminSidebar = () => {
