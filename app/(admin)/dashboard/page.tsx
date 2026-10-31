@@ -1,14 +1,14 @@
 import { ClientPageHeader } from "@/components/common/ClientPageHeader";
 import DashboardStats from "@/components/dashboard/DashboardStats";
 import RecentApplications from "@/components/dashboard/RecentApplications";
-import { CandidateData, JobsData } from "@/data";
+import { ApplicationsData, JobsData } from "@/data";
 
 function DashboardPage() {
-  const interviews = CandidateData.filter(
+  const interviews = ApplicationsData.filter(
     (c) => c.status === "INTERVIEW",
   ).length;
   const avgScore = (
-    CandidateData.reduce((s, c) => s + c.aiScore, 0) / CandidateData.length
+    ApplicationsData.reduce((s, c) => s + c.aiScore, 0) / ApplicationsData.length
   ).toFixed(1);
 
   return (
@@ -16,11 +16,11 @@ function DashboardPage() {
       <ClientPageHeader title={"OVERVIEW"} subtitle={"ADMIN DASHBOARD"} />
       <DashboardStats
         activeJobs={JobsData.length}
-        totalCandidates={CandidateData.length}
+        totalCandidates={ApplicationsData.length}
         avgScore={avgScore}
         interviews={interviews}
       />
-      <RecentApplications candidates={CandidateData} />
+      <RecentApplications applications={ApplicationsData} />
     </>
   );
 }

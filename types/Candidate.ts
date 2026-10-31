@@ -1,12 +1,13 @@
+import { ReactNode } from "react";
+
 export interface Candidate {
   id: string;
   name: string;
   email: string;
-  role: string;
-  aiScore: number;
-  status: "SUBMITTED"|"REVIEW"|"SHORTLIST"|"INTERVIEW"|"REJECTED";
-  appliedDate: string;
-  jobId: string;
+  phone: string;
+  location: string;
   experience: string;
-
+  skills: string[];
+  education: string;
+  joinedDate: string;
 }
